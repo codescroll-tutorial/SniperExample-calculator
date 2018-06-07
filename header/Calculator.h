@@ -5,4 +5,5 @@
 void calculate(Data* data);
 int getIsValid(Data* data);
 
+
 #endif /* __CALCULATOR_H__ */

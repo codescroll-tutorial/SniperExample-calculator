@@ -1,5 +1,6 @@
 #include "Util.h"
-int bufferSize;
+
+#define BUFFER_SIZE 100
 
 double add(double firstNumber, double secondNumber) {
     return firstNumber + secondNumber;
@@ -21,13 +22,29 @@ double div(double firstNumber, double secondNumber) {
     return firstNumber / secondNumber;
 }
 
-int initBuffer(Data *data[])
-{   
-    for(int i =0 ; i <=bufferSize; ++i)
+int initBuffer(Data **data)
+{   int i =0;
+
+    for(; i <=BUFFER_SIZE; ++i)
     {
         data[i] = new Data();
         data[i]->setEvaluationValue(((i%2)==0? 0 : -1));
     }
+    data[i] = new Data();
+    data[i]->setEvaluationValue(((i%2)==0? 0 : -1));
 
-    return true;
+    return i;
+}
+
+void deleteBuffer(Data **data)
+{
+    int i =0;
+
+    for(; i <=BUFFER_SIZE; ++i)
+    {
+        delete data[i];
+    }
+
+    delete data[BUFFER_SIZE];
+    delete data;
 }
