@@ -35,4 +35,9 @@ int Data::getOperatorKind(){
 	return this->operatorKind_;
 }
 
+void Data::setEvaluationValue(int value)
+{
+	this->isTrue_ = value;
+}
+
 

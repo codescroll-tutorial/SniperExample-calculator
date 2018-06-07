@@ -2,14 +2,20 @@
 
 #include "Calculator.h"
 #include "Data.h"
+#include "Util.h"
 #define BOUNDERY_VALUE 1024
-#define ARRAY_SIZE 10
+#define BUFFER_SIZE 10
+extern int bufferSize;
 
 extern void save(Data* data);
 
 int main() {
 	char c_operator;
-	int operatorKind = c_operator;
+	bufferSize = BUFFER_SIZE;
+
+	Data *dataArray[BUFFER_SIZE];
+	Data *data = new Data();
+	int operatorKind = (int)c_operator;
 	double firstNumber = 0.0;
 	double secondNumber = 0.0;
 	printf("Enter an operator (+, -, *,/): ");
@@ -34,7 +40,8 @@ int main() {
 			break;
 	}
 
-	Data *data = new Data();
+	initBuffer(dataArray);
+
 	data->setData(firstNumber, secondNumber);
 	data->setOperatorKind(operatorKind);
 

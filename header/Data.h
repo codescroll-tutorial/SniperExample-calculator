@@ -18,11 +18,13 @@ public:
 
     double operator+(double rvalue);
 
+    void setEvaluationValue(int value);
+
 private:
     int operatorKind_;
     double firstNumber_;
     double secondNumber_;
-    bool isTrue_;
+    unsigned int isTrue_;
 };
 
 #endif  /* __Data_H__ */

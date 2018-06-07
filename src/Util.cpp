@@ -1,3 +1,5 @@
+#include "Util.h"
+int bufferSize;
 
 double add(double firstNumber, double secondNumber) {
     return firstNumber + secondNumber;
@@ -17,4 +19,15 @@ double mul(double firstNumber, double secondNumber) {
 
 double div(double firstNumber, double secondNumber) {
     return firstNumber / secondNumber;
+}
+
+int initBuffer(Data *data[])
+{   
+    for(int i =0 ; i <=bufferSize; ++i)
+    {
+        data[i] = new Data();
+        data[i]->setEvaluationValue(((i%2)==0? 0 : -1));
+    }
+
+    return true;
 }
