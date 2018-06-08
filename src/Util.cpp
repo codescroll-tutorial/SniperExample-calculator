@@ -46,5 +46,4 @@ void deleteBuffer(Data **data)
     }
 
     delete data[BUFFER_SIZE];
-    delete[] data;
 }
