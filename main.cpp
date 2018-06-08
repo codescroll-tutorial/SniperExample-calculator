@@ -1,32 +1,30 @@
 #include <stdio.h>
 
-#include "Calculator.h"
-#include "Data.h"
-#include "Util.h"
+#include "header/Calculator.h"
+#include "header/Data.h"
+#include "header/Util.h"
 
 typedef unsigned int uint;
 #define BOUNDERY_VALUE 1024
 #define BUFFER_SIZE 10
 
 namespace{
-	void getValue(int *c_operator, float *firstNumber, double *secondNumber)
+	void getValue(char *c_operator, double *firstNumber, double *secondNumber)
 	{
 		printf("Enter an operator (+, -, *,/): ");
 		scanf("%c", c_operator);
 
 		printf("Enter two operands: ");
-		scanf("%lf %lf", firstNumber, secondNumber);
+		scanf("%lf%lf", firstNumber, secondNumber);
 	}
 }
 
 
-extern void save(Data* data);
+//extern void save(Data* data);
 
 int main() {
 
 	Data *dataArray[BUFFER_SIZE];
-	uint lastIndex = initBuffer(dataArray);
-
 	Data *data = new Data();
 
 	char c_operator;
@@ -62,7 +60,7 @@ int main() {
 	{
 		delete data;
 	}else if(sizeof(data) > BOUNDERY_VALUE){
-		save(data);
+		//save(data);
 		delete data;
 	}
 

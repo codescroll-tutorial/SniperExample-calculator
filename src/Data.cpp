@@ -1,4 +1,4 @@
-#include "Data.h"
+#include "../header/Data.h"
 #define TRUE_VALUE 1
 
 int Data::setData(double firstNumber,double secondNumber){
@@ -16,6 +16,8 @@ int Data::setData(double firstNumber,double secondNumber){
 bool Data::setOperatorKind(int operatorKind)
 {
 	this->operatorKind_ = operatorKind;
+
+	return true;
 }
 
 double Data::getFirstNumber(){

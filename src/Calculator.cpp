@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#include "Util.h"
-#include "Calculator.h"
+#include "../header/Util.h"
+#include "../header/Calculator.h"
 
 void calculate(Data* data)
 {

@@ -1,4 +1,4 @@
-#include "Util.h"
+#include "../header/Util.h"
 
 #define BUFFER_SIZE 100
 
@@ -40,11 +40,11 @@ void deleteBuffer(Data **data)
 {
     int i =0;
 
-    for(; i <=BUFFER_SIZE; ++i)
+    for(; i <= BUFFER_SIZE; ++i)
     {
         delete data[i];
     }
 
     delete data[BUFFER_SIZE];
-    delete data;
+    delete[] data;
 }
