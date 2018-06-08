@@ -19,8 +19,7 @@ namespace{
 	}
 }
 
-
-//extern void save(Data* data);
+extern void save(Data* data);
 
 int main() {
 
@@ -60,7 +59,7 @@ int main() {
 	{
 		delete data;
 	}else if(sizeof(data) > BOUNDERY_VALUE){
-		//save(data);
+		save(data);
 		delete data;
 	}
 
