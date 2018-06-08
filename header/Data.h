@@ -1,10 +1,11 @@
 #ifndef __Data_H__
 #define __Data_H__
+#include <stdio.h>
 
 class Data{
 public:
-    Data(){};
-    ~Data(){};
+    Data(){ printf("create\n"); };
+	~Data() { printf("delete\n"); };
 
     int setData(double firstNumber,double secondNumber);
 

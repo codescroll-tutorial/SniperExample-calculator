@@ -30,21 +30,9 @@ int initBuffer(Data **data)
         data[i] = new Data();
         data[i]->setEvaluationValue(((i%2)==0? 0 : -1));
     }
-    data[i] = new Data();
+    data[BUFFER_SIZE] = new Data();
     data[i]->setEvaluationValue(((i%2)==0? 0 : -1));
 
     return i;
 }
 
-void deleteBuffer(Data **data)
-{
-    int i =0;
-
-    for(; i <= BUFFER_SIZE; ++i)
-    {
-        delete data[i];
-    }
-
-    delete data[BUFFER_SIZE];
-    delete[] data;
-}

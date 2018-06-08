@@ -33,6 +33,8 @@ int main() {
 
 	getValue(&c_operator, &firstNumber, &secondNumber);
 
+	initBuffer(dataArray);
+
 	switch(c_operator) {
 		case '+':
 			operatorKind = 1;
@@ -62,8 +64,6 @@ int main() {
 		save(data);
 		delete data;
 	}
-
-	deleteBuffer(dataArray);
 
 	return 0;
 }
